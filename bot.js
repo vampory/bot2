@@ -1,5 +1,7 @@
 
 
+
+
 const Discord = require('discord.js');
 const client = new Discord.Client();
 console.log("IM READY.!");
@@ -71,6 +73,14 @@ if (message.author.bot) return;
     }
 
 });
+ 
+client.on('message', message => {
+if (message.content.startsWith('f')) {
+           if(!message.channel.guild) return;
 
+if (message.author.bot) return;
+    message.channel.sendMessage(`#rep <@475070652727033858>`);
+    }
 
+});
  client.login(process.env.BOT_TOKEN); 
